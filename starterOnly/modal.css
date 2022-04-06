@@ -527,3 +527,8 @@ footer {
   }
 }
 
+/* */
+
+.appear{
+  display: block;
+}
