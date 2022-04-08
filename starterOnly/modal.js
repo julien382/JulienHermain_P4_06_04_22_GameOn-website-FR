@@ -7,7 +7,7 @@ function editNav() {
   }
 }
 
-
+/////////////////////////////////////
 
 
 // DOM Elements
@@ -18,9 +18,13 @@ const cross = document.querySelector(".close");
 
 //input
 const first = document.querySelector("#first");
+const last = document.querySelector("#last");
+const email = document.querySelector("#email");
+const birthdate = document.querySelector("#birthdate");
+const quantity = document.querySelector("#quantity");
 
 
-
+/////////////////////////////////////
 
 
 const closeModal = () => {
@@ -32,7 +36,7 @@ const launchModal = () => {
   modalbg.classList.add("appear");
 }
 
-// first input
+// input input
 const handlerFirstInput = (event) => {
   const value = event.target.value
 
@@ -44,6 +48,52 @@ const handlerFirstInput = (event) => {
   }
 }
 
+const lastInput = (event) => {
+  const value = event.target.value
+
+  if(value.length <= 2){
+    console.log("c'est pas bon")
+  } 
+  else{
+    console.log("c'est bon")
+  }
+}
+
+const emailInput = (event) => {
+  const value = event.target.value
+
+  if(value.length <= 2){
+    console.log("c'est pas bon")
+  } 
+  else{
+    console.log("c'est bon")
+  }
+}
+
+const birthdateInput = (event) => {
+  const value = event.target.value
+
+  if(value.length <= 2){
+    console.log("c'est pas bon")
+  } 
+  else{
+    console.log("c'est bon")
+  }
+}
+
+const quantityInput = (event) => {
+  const value = event.target.value
+
+  if(value.length <= 2){
+    console.log("c'est pas bon")
+  } 
+  else{
+    console.log("c'est bon")
+  }
+}
+
+
+/////////////////////////////////////
 
 
 // launch modal event
@@ -52,5 +102,9 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // close modal event
 cross.addEventListener("click", closeModal);
 
-// first modal event
+// input modal event
 first.addEventListener("input", handlerFirstInput);
+last.addEventListener("input", lastInput);
+email.addEventListener("input", emailInput);
+birthdate.addEventListener("input", birthdateInput);
+quantity.addEventListener("input", quantityInput);
