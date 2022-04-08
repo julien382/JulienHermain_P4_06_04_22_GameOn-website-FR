@@ -41,10 +41,10 @@ const handlerFirstInput = (event) => {
   const value = event.target.value
 
   if(value.length <= 2){
-    console.log("c'est pas bon")
+    console.log("prénom c'est pas bon")
   } 
   else{
-    console.log("c'est bon")
+    console.log("prénom c'est bon")
   }
 }
 
@@ -52,10 +52,10 @@ const lastInput = (event) => {
   const value = event.target.value
 
   if(value.length <= 2){
-    console.log("c'est pas bon")
+    console.log("nom c'est pas bon")
   } 
   else{
-    console.log("c'est bon")
+    console.log("nom c'est bon")
   }
 }
 
@@ -63,10 +63,10 @@ const emailInput = (event) => {
   const value = event.target.value
 
   if(value.length <= 2){
-    console.log("c'est pas bon")
+    console.log("email c'est pas bon")
   } 
   else{
-    console.log("c'est bon")
+    console.log("email c'est bon")
   }
 }
 
@@ -74,10 +74,10 @@ const birthdateInput = (event) => {
   const value = event.target.value
 
   if(value.length <= 2){
-    console.log("c'est pas bon")
+    console.log("birthdate c'est pas bon")
   } 
   else{
-    console.log("c'est bon")
+    console.log("birthdate c'est bon")
   }
 }
 
@@ -85,12 +85,14 @@ const quantityInput = (event) => {
   const value = event.target.value
 
   if(value.length <= 2){
-    console.log("c'est pas bon")
+    console.log("quantity c'est pas bon")
   } 
   else{
-    console.log("c'est bon")
+    console.log("quantity c'est bon")
   }
 }
+
+
 
 
 /////////////////////////////////////
