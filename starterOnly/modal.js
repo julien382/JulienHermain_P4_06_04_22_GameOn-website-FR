@@ -62,7 +62,7 @@ const lastInput = (event) => {
 const emailInput = (event) => {
   const value = event.target.value
 
-  const emailRegex = new RegExp/
+  /*const emailRegex = new RegExp/*/
 
   if(emailRegex.test(value)){
     console.log("email c'est pas bon")
