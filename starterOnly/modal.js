@@ -86,7 +86,7 @@ const birthdateInput = (event) => {
 const quantityInput = (event) => {
   const value = event.target.value
 
-  if(value.length = 0){
+  if(value.length == 0){
     console.log("quantity c'est pas bon")
   } 
   else{
