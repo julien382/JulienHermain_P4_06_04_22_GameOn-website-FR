@@ -62,7 +62,9 @@ const lastInput = (event) => {
 const emailInput = (event) => {
   const value = event.target.value
 
-  if(value.length <= 2){
+  const emailRegex = new RegExp/
+
+  if(emailRegex.test(value)){
     console.log("email c'est pas bon")
   } 
   else{
@@ -84,7 +86,7 @@ const birthdateInput = (event) => {
 const quantityInput = (event) => {
   const value = event.target.value
 
-  if(value.length <= 2){
+  if(value.length = 0){
     console.log("quantity c'est pas bon")
   } 
   else{
