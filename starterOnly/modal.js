@@ -9,6 +9,7 @@ function editNav() {
 
 /////////////////////////////////////
 
+// validate
 let USER_INPUT = {
   firstname: {
     value: null,
@@ -44,7 +45,6 @@ let USER_INPUT = {
   },
 }
 
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -72,7 +72,8 @@ const launchModal = () => {
   modalbg.classList.add("appear");
 }
 
-// input input
+
+// input
 const handlerFirstInput = (event) => {
   // const value = first.value
   const value = event.target.value
@@ -119,6 +120,7 @@ const emailInput = (event) => {
 }
 
 const birthdateInput = (event) => {
+  const numberRegex = new RegExp("^[0-9]+$", 'g') // le + ==> au moins 1 caractère (ici chiffre)
   const value = event.target.value
   USER_INPUT.birthdate.value = value
 
@@ -144,7 +146,6 @@ const quantityInput = (event) => {
     console.log("quantity c'est pas bon");
     USER_INPUT.tournament.validate = false
   }
-
 }
 
 
@@ -159,6 +160,15 @@ const validate = (event) => {
   // console.log('validate: on peut envoyer les datas')
   // else
   // console.log('pas validate')
+  
+  /*const value = event.target.value
+  USER_INPUT.firstname.validate = value
+
+  if (value == true) {
+    console.log("tout est bon")
+  } else {
+    console.log("tout n'est pas bon");
+  }*/
 }
 
 
