@@ -90,47 +90,59 @@ const handlerFirstInput = (event) => {
 
 const lastInput = (event) => {
   const value = event.target.value
+  USER_INPUT.lastname.value = value
 
   if(value.length <= 2){
     console.log("nom c'est pas bon")
+    USER_INPUT.lastname.validate = false
   } 
   else{
     console.log("nom c'est bon")
+    USER_INPUT.lastname.validate = true
   }
 }
 
 const emailInput = (event) => {
   const value = event.target.value
+  USER_INPUT.email.value = value
   const emailRegex = new RegExp("^[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,3}$", 'g') // regex maison pour les email
 
   if (emailRegex.test(value)){
     console.log("email c'est bon")
+    USER_INPUT.email.validate = true
   } 
   else {
     //
     console.log("email c'est pas bon")
+    USER_INPUT.email.validate = false
   }
 }
 
 const birthdateInput = (event) => {
   const value = event.target.value
+  USER_INPUT.birthdate.value = value
 
   if(value.length <= 2){
     console.log("birthdate c'est pas bon")
+    USER_INPUT.birthdate.validate = false
   } 
   else{
     console.log("birthdate c'est bon")
+    USER_INPUT.birthdate.validate = true
   }
 }
 
 const quantityInput = (event) => {
   const numberRegex = new RegExp("^[0-9]+$", 'g') // le + ==> au moins 1 caractère (ici chiffre)
   const value = event.target.value
+  USER_INPUT.tournament.value = value
 
   if (numberRegex.test(value)) {
     console.log("quantity c'est bon")
+    USER_INPUT.tournament.validate = true
   } else {
     console.log("quantity c'est pas bon");
+    USER_INPUT.tournament.validate = false
   }
 
 }
