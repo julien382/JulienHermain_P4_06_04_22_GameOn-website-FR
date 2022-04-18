@@ -89,13 +89,13 @@ const first = document.querySelector("#first");
 const last = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector("#birthdate");
-const quantity = document.querySelector("#quantity");location1
+const quantity = document.querySelector("#quantity");
 const location1 = document.querySelector("#location1");
 const location2 = document.querySelector("#location2");
 const location3 = document.querySelector("#location3");
 const location4 = document.querySelector("#location4");
 const location5 = document.querySelector("#location5");
-const location6 = document.querySelector("#location6");checkbox1
+const location6 = document.querySelector("#location6");
 const checkbox1 = document.querySelector("#checkbox1");
 const checkbox2 = document.querySelector("#checkbox2");
 
@@ -194,11 +194,11 @@ const location1Input = (event) => {
   USER_INPUT.location1.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location1 c'est pas bon")
     USER_INPUT.location1.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location1 c'est bon")
     USER_INPUT.location1.validate = true
   }
 }
@@ -208,11 +208,11 @@ const location2Input = (event) => {
   USER_INPUT.location2.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location2 c'est pas bon")
     USER_INPUT.location2.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location2 c'est bon")
     USER_INPUT.location2.validate = true
   }
 }
@@ -222,11 +222,11 @@ const location3Input = (event) => {
   USER_INPUT.location3.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location3 c'est pas bon")
     USER_INPUT.location3.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location3 c'est bon")
     USER_INPUT.location3.validate = true
   }
 }
@@ -236,11 +236,11 @@ const location4Input = (event) => {
   USER_INPUT.location4.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location4 c'est pas bon")
     USER_INPUT.location4.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location4 c'est bon")
     USER_INPUT.location4.validate = true
   }
 }
@@ -250,11 +250,11 @@ const location5Input = (event) => {
   USER_INPUT.location5.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location5 c'est pas bon")
     USER_INPUT.location5.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location5 c'est bon")
     USER_INPUT.location5.validate = true
   }
 }
@@ -264,11 +264,11 @@ const location6Input = (event) => {
   USER_INPUT.location6.value = value
 
   if(value.length <= 2){
-    console.log("location c'est pas bon")
+    console.log("location6 c'est pas bon")
     USER_INPUT.location6.validate = false
   } 
   else{
-    console.log("location c'est bon")
+    console.log("location6 c'est bon")
     USER_INPUT.location6.validate = true
   }
 }
@@ -278,11 +278,11 @@ const checkbox1Input = (event) => {
   USER_INPUT.checkbox1.value = value
 
   if(value.length <= 2){
-    console.log("checkbox c'est pas bon")
+    console.log("checkbox1 c'est pas bon")
     USER_INPUT.checkbox1.validate = false
   } 
   else{
-    console.log("checkbox c'est bon")
+    console.log("checkbox1 c'est bon")
     USER_INPUT.checkbox1.validate = true
   }
 }
@@ -292,11 +292,11 @@ const checkbox2Input = (event) => {
   USER_INPUT.checkbox2.value = value
 
   if(value.length <= 2){
-    console.log("checkbox c'est pas bon")
+    console.log("checkbox2 c'est pas bon")
     USER_INPUT.checkbox2.validate = false
   } 
   else{
-    console.log("checkbox c'est bon")
+    console.log("checkbox2 c'est bon")
     USER_INPUT.checkbox2.validate = true
   }
 }
