@@ -67,10 +67,10 @@ let USER_INPUT = {
     value: null,
     validate: false
   },
-  checkbox1: {
+  /*checkbox1: {
     value: null,
     validate: false
-  },
+  },*/
   checkbox2: {
     value: null,
     validate: false
@@ -96,7 +96,7 @@ const location3 = document.querySelector("#location3");
 const location4 = document.querySelector("#location4");
 const location5 = document.querySelector("#location5");
 const location6 = document.querySelector("#location6");
-const checkbox1 = document.querySelector("#checkbox1");
+//const checkbox1 = document.querySelector("#checkbox1");
 const checkbox2 = document.querySelector("#checkbox2");
 
 
@@ -272,7 +272,7 @@ const location6Input = (event) => {
     USER_INPUT.location6.validate = true
   }
 }
-
+/*
 const checkbox1Input = (event) => {
   const value = event.target.value
   USER_INPUT.checkbox1.value = value
@@ -286,18 +286,18 @@ const checkbox1Input = (event) => {
     USER_INPUT.checkbox1.validate = true
   }
 }
-
+*/
 const checkbox2Input = (event) => {
   const value = event.target.value
   USER_INPUT.checkbox2.value = value
 
-  if(value.length <= 2){
-    console.log("checkbox2 c'est pas bon")
-    USER_INPUT.checkbox2.validate = false
-  } 
-  else{
+  if(value.clicked){
     console.log("checkbox2 c'est bon")
     USER_INPUT.checkbox2.validate = true
+  } 
+  else{
+    console.log("checkbox2 c'est pas bon")
+    USER_INPUT.checkbox2.validate = false
   }
 }
 
@@ -312,6 +312,20 @@ const validate = (event) => {
   // console.log('validate: on peut envoyer les datas')
   // else
   // console.log('pas validate')
+
+  if (checkbox1.checked){
+    console.log("cgv c'est bon")
+  } 
+  else{
+    alert("cgv c'est pas bon")
+  }
+
+  /*if (checkbox2.checked){
+    console.log("newEvents c'est bon")
+  } 
+  else{
+    alert("newEvents c'est pas bon")
+  }*/
   
   /*const value = event.target.value
   USER_INPUT.firstname.validate = value
@@ -347,5 +361,5 @@ location3.addEventListener("input", location3Input);
 location4.addEventListener("input", location4Input);
 location5.addEventListener("input", location5Input);
 location6.addEventListener("input", location6Input);
-checkbox1.addEventListener("input", checkbox1Input);
-checkbox2.addEventListener("input", checkbox2Input);
+//checkbox1.addEventListener("click", checkbox1Input);
+checkbox2.addEventListener("click", checkbox2Input);
