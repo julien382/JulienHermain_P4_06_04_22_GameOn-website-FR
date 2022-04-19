@@ -303,7 +303,7 @@ const checkbox2Input = (event) => {
 
 
 const validate = (event) => {
-  // on arrête le comportement par défaut
+  // on arrête le comportement par défaut (new page)
   event.preventDefault()
   // a partir de là c'est bibi qui gère !
   console.log('user responses:', USER_INPUT);
@@ -312,6 +312,16 @@ const validate = (event) => {
   // console.log('validate: on peut envoyer les datas')
   // else
   // console.log('pas validate')
+
+  /*const value = event.target.value
+  USER_INPUT.firstname.validate = value
+
+  if (value == true) {
+    console.log("tout est bon")
+  } else {
+    console.log("tout n'est pas bon");
+  }*/
+
 
   if (checkbox1.checked){
     console.log("cgv c'est bon")
@@ -327,14 +337,6 @@ const validate = (event) => {
     alert("newEvents c'est pas bon")
   }*/
   
-  /*const value = event.target.value
-  USER_INPUT.firstname.validate = value
-
-  if (value == true) {
-    console.log("tout est bon")
-  } else {
-    console.log("tout n'est pas bon");
-  }*/
 }
 
 
