@@ -286,7 +286,7 @@ const checkbox1Input = (event) => {
     USER_INPUT.checkbox1.validate = true
   }
 }
-*/
+
 const checkbox2Input = (event) => {
   const value = event.target.value
   USER_INPUT.checkbox2.value = value
@@ -299,8 +299,20 @@ const checkbox2Input = (event) => {
     console.log("checkbox2 c'est pas bon")
     USER_INPUT.checkbox2.validate = false
   }
-}
+}*/
+const checkbox2Input = (event) => {
+  const value = event.target.value
+  USER_INPUT.checkbox2.value = value
 
+  if (checkbox2.checked){
+    console.log("newEvents c'est bon")
+    USER_INPUT.checkbox2.validate = true
+  } 
+  else{
+    console.log("newEvents c'est pas bon")
+    USER_INPUT.checkbox2.validate = false
+  }
+}
 
 const validate = (event) => {
   // on arrête le comportement par défaut (new page)
@@ -364,4 +376,4 @@ location4.addEventListener("input", location4Input);
 location5.addEventListener("input", location5Input);
 location6.addEventListener("input", location6Input);
 //checkbox1.addEventListener("click", checkbox1Input);
-checkbox2.addEventListener("click", checkbox2Input);
+checkbox2.addEventListener("input", checkbox2Input);
