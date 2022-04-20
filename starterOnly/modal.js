@@ -119,7 +119,6 @@ const emailInput = (event) => {
     USER_INPUT.email.validate = true
   } 
   else {
-    //
     console.log("email c'est pas bon")
     USER_INPUT.email.validate = false
   }
@@ -161,7 +160,7 @@ const cityHandler = (event) => {
 }
 
 const cguHandler = (event) => {
-  const isChecked = event.target.checked
+  const isChecked = event.target.checked  // (true/false)
 
   if (isChecked){
     USER_INPUT.cgu.validate = true
@@ -171,7 +170,7 @@ const cguHandler = (event) => {
 }
 
 const newsletterHandler = (event) => {
-  const isChecked = event.target.checked
+  const isChecked = event.target.checked  // (true/false)
 
   if (isChecked){
     USER_INPUT.newsletter.validate = true
@@ -184,6 +183,16 @@ const validate = (event) => {
   // on arrête le comportement par défaut (new page)
   event.preventDefault()
   console.log('user responses:', USER_INPUT);
+
+
+  // boucler sur les elements de USER_INPUT
+  // Si au moins 1 élément.validate = false (à part la newsletter ;))
+  // alors alert
+  // sinon console.log(On peut envoyer le formulaire)
+
+
+
+
 
   // if toute les clé de USER_INPUT.xxx.validate sont bonnes
   // console.log('validate: on peut envoyer les datas')
@@ -222,4 +231,4 @@ quantity.addEventListener("input", quantityInput);
 cities.forEach(city => {city.addEventListener('click', cityHandler)});
 
 cgu.addEventListener("click", cguHandler);
-newsletter.addEventListener("input", newsletterHandler);
+newsletter.addEventListener("click", newsletterHandler);
