@@ -43,36 +43,14 @@ let USER_INPUT = {
     value: null,
     validate: false
   },
-  location1: {
+  location: {
     value: null,
     validate: false
   },
-  location2: {
-    value: null,
-    validate: false
+  cgu: {
+    validate: true
   },
-  location3: {
-    value: null,
-    validate: false
-  },
-  location4: {
-    value: null,
-    validate: false
-  },
-  location5: {
-    value: null,
-    validate: false
-  },
-  location6: {
-    value: null,
-    validate: false
-  },
-  /*checkbox1: {
-    value: null,
-    validate: false
-  },*/
-  checkbox2: {
-    value: null,
+  newsletter: {
     validate: false
   },
 }
@@ -90,14 +68,9 @@ const last = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector("#birthdate");
 const quantity = document.querySelector("#quantity");
-const location1 = document.querySelector("#location1");
-const location2 = document.querySelector("#location2");
-const location3 = document.querySelector("#location3");
-const location4 = document.querySelector("#location4");
-const location5 = document.querySelector("#location5");
-const location6 = document.querySelector("#location6");
-//const checkbox1 = document.querySelector("#checkbox1");
-const checkbox2 = document.querySelector("#checkbox2");
+const locations = document.querySelectorAll(".checkbox-input");
+const cgu = document.querySelector("#checkbox");
+const  newsletter = document.querySelector("#checkbox");
 
 
 
@@ -161,17 +134,17 @@ const emailInput = (event) => {
 }
 
 const birthdateInput = (event) => {
-  const numberRegex = new RegExp("^[0-9]+$", 'g') // le + ==> au moins 1 caractère (ici chiffre)
+  const numberRegex = new RegExp("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", 'g') // le + ==> au moins 1 caractère (ici chiffre)
   const value = event.target.value
   USER_INPUT.birthdate.value = value
 
-  if(value.length <= 2){
-    console.log("birthdate c'est pas bon")
-    USER_INPUT.birthdate.validate = false
-  } 
-  else{
+  if(numberRegex.test(value)){
     console.log("birthdate c'est bon")
     USER_INPUT.birthdate.validate = true
+  } 
+  else{
+    console.log("birthdate c'est pas bon")
+    USER_INPUT.birthdate.validate = false
   }
 }
 
@@ -189,128 +162,29 @@ const quantityInput = (event) => {
   }
 }
 
-const location1Input = (event) => {
+const radioHandler = (event) => {
   const value = event.target.value
-  USER_INPUT.location1.value = value
+  USER_INPUT.tournament.value = value
+  USER_INPUT.tournament.validate = true
+}
 
-  if(value.length <= 2){
-    console.log("location1 c'est pas bon")
-    USER_INPUT.location1.validate = false
-  } 
-  else{
-    console.log("location1 c'est bon")
-    USER_INPUT.location1.validate = true
+const cguHandler = (event) => {
+  const isChecked = event.target.checked
+
+  if (isChecked){
+    USER_INPUT.cgu.validate = true
+  } else {
+    USER_INPUT.cgu.validate = false
   }
 }
 
-const location2Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.location2.value = value
+const newsletterHandler = (event) => {
+  const isChecked = event.target.checked
 
-  if(value.length <= 2){
-    console.log("location2 c'est pas bon")
-    USER_INPUT.location2.validate = false
-  } 
-  else{
-    console.log("location2 c'est bon")
-    USER_INPUT.location2.validate = true
-  }
-}
-
-const location3Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.location3.value = value
-
-  if(value.length <= 2){
-    console.log("location3 c'est pas bon")
-    USER_INPUT.location3.validate = false
-  } 
-  else{
-    console.log("location3 c'est bon")
-    USER_INPUT.location3.validate = true
-  }
-}
-
-const location4Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.location4.value = value
-
-  if(value.length <= 2){
-    console.log("location4 c'est pas bon")
-    USER_INPUT.location4.validate = false
-  } 
-  else{
-    console.log("location4 c'est bon")
-    USER_INPUT.location4.validate = true
-  }
-}
-
-const location5Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.location5.value = value
-
-  if(value.length <= 2){
-    console.log("location5 c'est pas bon")
-    USER_INPUT.location5.validate = false
-  } 
-  else{
-    console.log("location5 c'est bon")
-    USER_INPUT.location5.validate = true
-  }
-}
-
-const location6Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.location6.value = value
-
-  if(value.length <= 2){
-    console.log("location6 c'est pas bon")
-    USER_INPUT.location6.validate = false
-  } 
-  else{
-    console.log("location6 c'est bon")
-    USER_INPUT.location6.validate = true
-  }
-}
-/*
-const checkbox1Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.checkbox1.value = value
-
-  if(value.length <= 2){
-    console.log("checkbox1 c'est pas bon")
-    USER_INPUT.checkbox1.validate = false
-  } 
-  else{
-    console.log("checkbox1 c'est bon")
-    USER_INPUT.checkbox1.validate = true
-  }
-}
-
-const checkbox2Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.checkbox2.value = value
-
-  if(value.clicked){
-    console.log("checkbox2 c'est bon")
-    USER_INPUT.checkbox2.validate = true
-  } 
-  else{
-    console.log("checkbox2 c'est pas bon")
-    USER_INPUT.checkbox2.validate = false
-  }
-}*/
-const checkbox2Input = (event) => {
-  const value = event.target.value
-  USER_INPUT.checkbox2.value = value
-
-  if (checkbox2.checked){
-    console.log("newEvents c'est bon")
-    USER_INPUT.checkbox2.validate = true
-  } 
-  else{
-    console.log("newEvents c'est pas bon")
-    USER_INPUT.checkbox2.validate = false
+  if (isChecked){
+    USER_INPUT.newsletter.validate = true
+  } else {
+    USER_INPUT.newsletter.validate = false
   }
 }
 
@@ -333,21 +207,6 @@ const validate = (event) => {
   } else {
     console.log("tout n'est pas bon");
   }*/
-
-
-  if (checkbox1.checked){
-    console.log("cgv c'est bon")
-  } 
-  else{
-    alert("cgv c'est pas bon")
-  }
-
-  /*if (checkbox2.checked){
-    console.log("newEvents c'est bon")
-  } 
-  else{
-    alert("newEvents c'est pas bon")
-  }*/
   
 }
 
@@ -369,11 +228,7 @@ last.addEventListener("input", lastInput);
 email.addEventListener("input", emailInput);
 birthdate.addEventListener("input", birthdateInput);
 quantity.addEventListener("input", quantityInput);
-location1.addEventListener("input", location1Input);
-location2.addEventListener("input", location2Input);
-location3.addEventListener("input", location3Input);
-location4.addEventListener("input", location4Input);
-location5.addEventListener("input", location5Input);
-location6.addEventListener("input", location6Input);
-//checkbox1.addEventListener("click", checkbox1Input);
-checkbox2.addEventListener("input", checkbox2Input);
+locations.forEach(radio => {radio.addEventListener('click', radioHandler)});
+
+cgu.addEventListener("click", cguHandler);
+newsletter.addEventListener("input", newsletterHandler);
