@@ -36,18 +36,6 @@ let USER_INPUT = {
     validate: false
   },
   cgu: {
-    value: null,
-    validate: false
-  },
-  newsletter: {
-    value: null,
-    validate: false
-  },
-  location: {
-    value: null,
-    validate: false
-  },
-  cgu: {
     validate: true
   },
   newsletter: {
@@ -68,9 +56,9 @@ const last = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector("#birthdate");
 const quantity = document.querySelector("#quantity");
-const locations = document.querySelectorAll(".checkbox-input");
-const cgu = document.querySelector("#checkbox");
-const  newsletter = document.querySelector("#checkbox");
+const cities = document.querySelectorAll(".checkbox-input");
+const cgu = document.querySelector("#checkbox1");
+const newsletter = document.querySelector("#checkbox2");
 
 
 
@@ -91,15 +79,19 @@ const launchModal = () => {
 const handlerFirstInput = (event) => {
   // const value = first.value
   const value = event.target.value
+  const formData = first.parentElement
   USER_INPUT.firstname.value = value
 
   if(value.length <= 2){
     console.log("prénom c'est pas bon")
     USER_INPUT.firstname.validate = false
+    formData.setAttribute('data-error-visible', true)
+    formData.setAttribute('data-error', 'Le prénom doit comporter au morns 2 caractères !')
   } 
   else{
     console.log("prénom c'est bon")
     USER_INPUT.firstname.validate = true
+    formData.setAttribute('data-error-visible', false)
   }
 }
 
@@ -162,10 +154,10 @@ const quantityInput = (event) => {
   }
 }
 
-const radioHandler = (event) => {
+const cityHandler = (event) => {
   const value = event.target.value
-  USER_INPUT.tournament.value = value
-  USER_INPUT.tournament.validate = true
+  USER_INPUT.city.value = value
+  USER_INPUT.city.validate = true
 }
 
 const cguHandler = (event) => {
@@ -191,7 +183,6 @@ const newsletterHandler = (event) => {
 const validate = (event) => {
   // on arrête le comportement par défaut (new page)
   event.preventDefault()
-  // a partir de là c'est bibi qui gère !
   console.log('user responses:', USER_INPUT);
 
   // if toute les clé de USER_INPUT.xxx.validate sont bonnes
@@ -207,7 +198,7 @@ const validate = (event) => {
   } else {
     console.log("tout n'est pas bon");
   }*/
-  
+
 }
 
 
@@ -228,7 +219,7 @@ last.addEventListener("input", lastInput);
 email.addEventListener("input", emailInput);
 birthdate.addEventListener("input", birthdateInput);
 quantity.addEventListener("input", quantityInput);
-locations.forEach(radio => {radio.addEventListener('click', radioHandler)});
+cities.forEach(city => {city.addEventListener('click', cityHandler)});
 
 cgu.addEventListener("click", cguHandler);
 newsletter.addEventListener("input", newsletterHandler);
