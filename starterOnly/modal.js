@@ -215,6 +215,20 @@ const validate = (event) => {
   // alors alert
   // sinon console.log(On peut envoyer le formulaire)
 
+  const va1 = USER_INPUT.firstname.validate
+  const va2 = USER_INPUT.lastname.validate
+  const va3 = USER_INPUT.email.validate
+  const va4 = USER_INPUT.birthdate.validate
+  const va5 = USER_INPUT.tournament.validate
+  const va6 = USER_INPUT.city.validate
+  const va7 = USER_INPUT.cgu.validate
+
+  if (va1,va2,va3,va4,va5,va6,va7 === false){
+    console.log('yo')
+  }
+
+
+
 
 
 
