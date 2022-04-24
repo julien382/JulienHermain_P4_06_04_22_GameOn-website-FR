@@ -182,13 +182,17 @@ const cityHandler = (event) => {
 
 const cguHandler = (event) => {
   const isChecked = event.target.checked  // (true/false)
+  const formData = cgu.parentElement
 
   if (isChecked){
     console.log("cgu c'est bon")
     USER_INPUT.cgu.validate = true
+    formData.setAttribute('data-error-visible', false)
   } else {
     console.log("cgu c'est pas bon")
     USER_INPUT.cgu.validate = false
+    formData.setAttribute('data-error-visible', true)
+    formData.setAttribute('data-error', 'Le cgu ne correspond pas !')
   }
 }
 
@@ -270,7 +274,7 @@ const validate = (event) => {
 
 
 
-  
+
 
   // if toute les clé de USER_INPUT.xxx.validate sont bonnes
   // console.log('validate: on peut envoyer les datas')
