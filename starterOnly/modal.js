@@ -215,6 +215,13 @@ const validate = (event) => {
   // alors alert
   // sinon console.log(On peut envoyer le formulaire)
 
+/*
+  for (const i = 1; i < 7; i++){
+    va = va + i;
+
+  }*/
+
+
   const va1 = USER_INPUT.firstname.validate
   const va2 = USER_INPUT.lastname.validate
   const va3 = USER_INPUT.email.validate
@@ -222,16 +229,48 @@ const validate = (event) => {
   const va5 = USER_INPUT.tournament.validate
   const va6 = USER_INPUT.city.validate
   const va7 = USER_INPUT.cgu.validate
+/*
+  const vaAll = va1,va2,va3,va4,va5,va6,va7
+  if (USER_INPUT. == false){
+    console.log('yoAll')
+  }*/
 
-  if (va1,va2,va3,va4,va5,va6,va7 === false){
-    console.log('yo')
+  if (va1 == true){
+    console.log('yo1')
+    if (va2 == true){
+      console.log('yo2')
+      if (va3 == true){
+        console.log('yo3')
+        if (va4 == true){
+          console.log('yo4')
+          if (va5 == true){
+            console.log('yo5')
+            if (va6 == true){
+              console.log('yo6')
+              if (va7 == true){
+                console.log('yo7')
+             
+                console.log('yoAll')
+              }
+            }
+          }
+        }
+      }
+    }
   }
+  else{
+    alert('formulaire invalide')
+  }
+  
 
 
 
 
 
 
+
+
+  
 
   // if toute les clé de USER_INPUT.xxx.validate sont bonnes
   // console.log('validate: on peut envoyer les datas')
