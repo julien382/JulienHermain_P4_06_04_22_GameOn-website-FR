@@ -170,17 +170,24 @@ const quantityInput = (event) => {
 }
 
 const cityHandler = (event) => {
-  const value = event.target.value
-  USER_INPUT.city.value = value
-  USER_INPUT.city.validate = true
+  const isChecked = event.target.value
+  if (isChecked){
+    console.log("city c'est bon")
+    USER_INPUT.city.validate = true
+  } else {
+    console.log("city c'est pas bon")
+    USER_INPUT.city.validate = false
+  }
 }
 
 const cguHandler = (event) => {
   const isChecked = event.target.checked  // (true/false)
 
   if (isChecked){
+    console.log("cgu c'est bon")
     USER_INPUT.cgu.validate = true
   } else {
+    console.log("cgu c'est pas bon")
     USER_INPUT.cgu.validate = false
   }
 }
@@ -189,8 +196,10 @@ const newsletterHandler = (event) => {
   const isChecked = event.target.checked  // (true/false)
 
   if (isChecked){
+    console.log("newsletter c'est bon")
     USER_INPUT.newsletter.validate = true
   } else {
+    console.log("newsletter c'est pas bon")
     USER_INPUT.newsletter.validate = false
   }
 }
