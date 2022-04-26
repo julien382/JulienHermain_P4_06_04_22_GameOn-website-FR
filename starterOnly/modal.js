@@ -242,7 +242,7 @@ const validate = (event) => {
   if (va1 == true){
     console.log('yo1')
     if (va2 == true){
-      console.log('yo2')
+      console.log('yo2') 
       if (va3 == true){
         console.log('yo3')
         if (va4 == true){

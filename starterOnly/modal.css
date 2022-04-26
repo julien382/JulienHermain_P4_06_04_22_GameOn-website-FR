@@ -603,3 +603,25 @@ footer {
 .appear{
   display: block;
 }
+
+.content_thanks {
+  margin: 20% auto;
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.text_thanks{
+  margin-top: 290px;
+  margin-bottom: 290px;
+}
