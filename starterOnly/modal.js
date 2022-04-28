@@ -214,58 +214,23 @@ const validate = (event) => {
   console.log('user responses:', USER_INPUT);
 
 
-  // boucler sur les elements de USER_INPUT
-  // Si au moins 1 élément.validate = false (à part la newsletter ;))
-  // alors alert
-  // sinon console.log(On peut envoyer le formulaire)
-
-
-  const va1 = USER_INPUT.firstname.validate
-  const va2 = USER_INPUT.lastname.validate
-  const va3 = USER_INPUT.email.validate
-  const va4 = USER_INPUT.birthdate.validate
-  const va5 = USER_INPUT.tournament.validate
-  const va6 = USER_INPUT.city.validate
-  const va7 = USER_INPUT.cgu.validate
-/*
-  const vaAll = va1,va2,va3,va4,va5,va6,va7
-  if (USER_INPUT. == false){
-    console.log('yoAll')
-  }*/
 
   for (const input in USER_INPUT) {
-    if (USER_INPUT[input].validate == false){
-      alert("c'est pas bon")
+    // input = "firstname", "lastname", "email"....
+
+    // USER_INPUT.firstname
+    // USER_INPUT['firstname']
+
+    if (USER_INPUT[input].validate == false) {
+      alert('c\'est pas bon')
       break
     } else {
-      console.log("ok")
+      console.log('ok !!');
+      // 1 - tu caches le formulaire
+      // 2 - affiche la modal d'inscription
     }
   }
   
-
-
-
-
-
-
-
-
-
-
-  // if toute les clé de USER_INPUT.xxx.validate sont bonnes
-  // console.log('validate: on peut envoyer les datas')
-  // else
-  // console.log('pas validate')
-
-  /*const value = event.target.value
-  USER_INPUT.firstname.validate = value
-
-  if (value == true) {
-    console.log("tout est bon")
-  } else {
-    console.log("tout n'est pas bon");
-  }*/
-
 }
 
 
