@@ -56,7 +56,7 @@ const last = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector("#birthdate");
 const quantity = document.querySelector("#quantity");
-const cities = document.querySelectorAll(".checkbox-input");
+const cities = document.querySelectorAll(".checkbox-input[type-radio]");
 const cgu = document.querySelector("#checkbox1");
 const newsletter = document.querySelector("#checkbox2");
 
