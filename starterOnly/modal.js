@@ -219,12 +219,6 @@ const validate = (event) => {
   // alors alert
   // sinon console.log(On peut envoyer le formulaire)
 
-/*
-  for (const i = 1; i < 7; i++){
-    va = va + i;
-
-  }*/
-
 
   const va1 = USER_INPUT.firstname.validate
   const va2 = USER_INPUT.lastname.validate
@@ -239,31 +233,13 @@ const validate = (event) => {
     console.log('yoAll')
   }*/
 
-  if (va1 == true){
-    console.log('yo1')
-    if (va2 == true){
-      console.log('yo2') 
-      if (va3 == true){
-        console.log('yo3')
-        if (va4 == true){
-          console.log('yo4')
-          if (va5 == true){
-            console.log('yo5')
-            if (va6 == true){
-              console.log('yo6')
-              if (va7 == true){
-                console.log('yo7')
-             
-                console.log('yoAll')
-              }
-            }
-          }
-        }
-      }
+  for (const input in USER_INPUT) {
+    if (USER_INPUT[input].validate == false){
+      alert("c'est pas bon")
+      break
+    } else {
+      console.log("ok")
     }
-  }
-  else{
-    alert('formulaire invalide')
   }
   
 
