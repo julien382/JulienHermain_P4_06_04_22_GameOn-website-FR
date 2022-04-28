@@ -40,6 +40,7 @@ img {
 
 .header-logo {
   float: left;
+  max-width: 75%;
 }
 .main-navbar {
   float: right;
