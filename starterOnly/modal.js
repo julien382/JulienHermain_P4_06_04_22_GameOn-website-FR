@@ -13,27 +13,27 @@ function editNav() {
 let USER_INPUT = {
   firstname: {
     value: null,
-    validate: false
+    validate: true
   },
   lastname: {
     value: null,
-    validate: false
+    validate: true
   },
   email: {
     value: null,
-    validate: false
+    validate: true
   },
   birthdate: {
     value: null,
-    validate: false
+    validate: true
   },
   tournament: {
     value: null,
-    validate: false
+    validate: true
   },
   city: {
     value: null,
-    validate: false
+    validate: true
   },
   cgu: {
     validate: true
@@ -44,10 +44,18 @@ let USER_INPUT = {
 }
 
 // DOM Elements
+/// je m'inscris ///
 const modalbg = document.querySelector(".bground");
+const modalbgContentThanks = document.querySelector(".content_thanks");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 const cross = document.querySelector(".close");
+/// c'est parti ///
+const modalBtnSubmit = document.querySelectorAll(".modal-btn-submit");
+//const cross = document.querySelector(".close");
+/// thanks ///
+
+
+const formData = document.querySelectorAll(".formData");
 
 //input
 const form = document.querySelector("form");
@@ -64,7 +72,7 @@ const newsletter = document.querySelector("#checkbox2");
 
 /////////////////////////////////////
 
-
+/// je m'inscris ///
 const closeModal = () => {
   modalbg.classList.remove("appear");
 }
@@ -73,6 +81,17 @@ const closeModal = () => {
 const launchModal = () => {
   modalbg.classList.add("appear");
 }
+/// c'est parti ///
+/*const closeModal = () => {
+  modalbg.classList.remove("appear");
+}*/
+
+// launch modal form
+const launchModalSubmit = () => {
+  modalbg.classList.remove("appear");
+  modalbgContentThanks.classList.add("appear");
+}
+/// thanks ///
 
 
 // input
@@ -236,13 +255,27 @@ const validate = (event) => {
 
 /////////////////////////////////////
 
-
+/// je m'inscris ///
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // close modal event
 cross.addEventListener("click", closeModal);
 
+/// c'est parti ///
+// launch modal event
+modalBtnSubmit.forEach((btn) => btn.addEventListener("click", launchModalSubmit));
+
+// close modal event
+//cross.addEventListener("click", closeModal);
+
+
+/// thanks ///
+
+
+
+
+/// form validate ///
 form.addEventListener('submit', validate)
 
 // input modal event
