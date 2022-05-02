@@ -13,15 +13,15 @@ function editNav() {
 let USER_INPUT = {
   firstname: {
     value: null,
-    validate: true
+    validate: false
   },
   lastname: {
     value: null,
-    validate: true
+    validate: false
   },
   email: {
     value: null,
-    validate: true
+    validate: false
   },
   birthdate: {
     value: null,
@@ -87,11 +87,7 @@ const closeModalThanks = () => {
   modalbgContentThanks.classList.remove("appear");
 }
 
-// launch modal form
-const launchModalSubmit = () => {
-  modalbg.classList.remove("appear");
-  modalbgContentThanks.classList.add("appear");
-}
+
 /// thanks ///
 const launchModalSubmitThanks = () => {
   modalbgContentThanks.classList.remove("appear");
@@ -250,6 +246,12 @@ const validate = (event) => {
       console.log('ok !!');
       // 1 - tu caches le formulaire
       // 2 - affiche la modal d'inscription
+      // launch modal form
+
+      //const launchModalSubmit = () => {
+      modalbg.classList.remove("appear");
+      modalbgContentThanks.classList.add("appear");
+      //}
     }
   }
   
@@ -267,7 +269,7 @@ cross.addEventListener("click", closeModal);
 
 /// c'est parti ///
 // launch modal event
-modalBtnSubmit.forEach((btn) => btn.addEventListener("click", launchModalSubmit));
+modalBtnSubmit.forEach((btn) => btn.addEventListener("click", validate));
 modalBtnSubmitThanks.forEach((btn) => btn.addEventListener("click", launchModalSubmitThanks));
 
 // close modal event
