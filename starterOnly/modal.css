@@ -166,29 +166,6 @@ main {
   background: #3876ac;
 }
 
-
-.content_thanks {
-  margin: 20% auto;
-  padding: 30px;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
-  background: #232323;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  padding-top: 10px;
-}
-
-.text_thanks{
-  margin-top: 290px;
-  margin-bottom: 290px;
-}
-
 .smFont {
   font-size: 16px;
 }
@@ -626,4 +603,41 @@ footer {
 
 .appear{
   display: block;
+}
+
+.content_thanks {
+  position: fixed;
+  margin: 20% auto;
+  margin-left: 20% auto;
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.text_thanks{
+  margin-top: 290px;
+  margin-bottom: 290px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .content_thanks {
+    margin-top: 4%;
+    margin-left: 15% ;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .content_thanks {
+    margin-top: 4%;
+    margin-left: 30% ;
+  }
 }
