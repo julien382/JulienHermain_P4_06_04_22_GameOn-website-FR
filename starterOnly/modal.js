@@ -52,9 +52,10 @@ const cross = document.querySelector(".close");
 /// c'est parti ///
 const modalBtnSubmit = document.querySelectorAll(".modal-btn-submit");
 const crossThanks = document.querySelector(".closeThanks");
+const modalBtnSubmitThanks = document.querySelectorAll(".btn-submitThanks");
 /// thanks ///
 
-
+//data-error
 const formData = document.querySelectorAll(".formData");
 
 //input
@@ -92,7 +93,9 @@ const launchModalSubmit = () => {
   modalbgContentThanks.classList.add("appear");
 }
 /// thanks ///
-
+const launchModalSubmitThanks = () => {
+  modalbgContentThanks.classList.remove("appear");
+}
 
 // input
 const handlerFirstInput = (event) => {
@@ -265,6 +268,7 @@ cross.addEventListener("click", closeModal);
 /// c'est parti ///
 // launch modal event
 modalBtnSubmit.forEach((btn) => btn.addEventListener("click", launchModalSubmit));
+modalBtnSubmitThanks.forEach((btn) => btn.addEventListener("click", launchModalSubmitThanks));
 
 // close modal event
 crossThanks.addEventListener("click", closeModalThanks);
