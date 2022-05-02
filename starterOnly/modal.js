@@ -25,15 +25,15 @@ let USER_INPUT = {
   },
   birthdate: {
     value: null,
-    validate: true
+    validate: false
   },
   tournament: {
     value: null,
-    validate: true
+    validate: false
   },
   city: {
     value: null,
-    validate: true
+    validate: false
   },
   cgu: {
     validate: true
@@ -242,11 +242,11 @@ const validate = (event) => {
     if (USER_INPUT[input].validate == false) {
       alert('c\'est pas bon')
       break
-    } else {
+    } 
+    else {
       console.log('ok !!');
       // 1 - tu caches le formulaire
       // 2 - affiche la modal d'inscription
-      // launch modal form
 
       //const launchModalSubmit = () => {
       modalbg.classList.remove("appear");
@@ -269,6 +269,7 @@ cross.addEventListener("click", closeModal);
 
 /// c'est parti ///
 // launch modal event
+modalBtnSubmit.forEach((btn) => btn.addEventListener("click", validate));
 modalBtnSubmit.forEach((btn) => btn.addEventListener("click", validate));
 modalBtnSubmitThanks.forEach((btn) => btn.addEventListener("click", launchModalSubmitThanks));
 
