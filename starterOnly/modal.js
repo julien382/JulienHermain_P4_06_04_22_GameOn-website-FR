@@ -51,7 +51,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const cross = document.querySelector(".close");
 /// c'est parti ///
 const modalBtnSubmit = document.querySelectorAll(".modal-btn-submit");
-//const cross = document.querySelector(".close");
+const crossThanks = document.querySelector(".closeThanks");
 /// thanks ///
 
 
@@ -82,9 +82,9 @@ const launchModal = () => {
   modalbg.classList.add("appear");
 }
 /// c'est parti ///
-/*const closeModal = () => {
-  modalbg.classList.remove("appear");
-}*/
+const closeModalThanks = () => {
+  modalbgContentThanks.classList.remove("appear");
+}
 
 // launch modal form
 const launchModalSubmit = () => {
@@ -267,7 +267,7 @@ cross.addEventListener("click", closeModal);
 modalBtnSubmit.forEach((btn) => btn.addEventListener("click", launchModalSubmit));
 
 // close modal event
-//cross.addEventListener("click", closeModal);
+crossThanks.addEventListener("click", closeModalThanks);
 
 
 /// thanks ///
