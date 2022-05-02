@@ -169,7 +169,7 @@ main {
 .smFont {
   font-size: 16px;
 }
-
+.content_thanks,
 .bground {
   display: none;
   position: fixed;
