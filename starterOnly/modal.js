@@ -65,10 +65,9 @@ const last = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector("#birthdate");
 const quantity = document.querySelector("#quantity");
-const cities = document.querySelectorAll(".checkbox-input[type-radio]");
+const cities = document.querySelectorAll(".checkbox-input[type=radio]");
 const cgu = document.querySelector("#checkbox1");
 const newsletter = document.querySelector("#checkbox2");
-
 
 
 /////////////////////////////////////
@@ -87,7 +86,6 @@ const closeModalThanks = () => {
   modalbgContentThanks.classList.remove("appear");
 }
 
-
 /// thanks ///
 const launchModalSubmitThanks = () => {
   modalbgContentThanks.classList.remove("appear");
@@ -100,14 +98,12 @@ const handlerFirstInput = (event) => {
   const formData = first.parentElement
   USER_INPUT.firstname.value = value
 
-  if(value.length <= 2){
-    console.log("prénom c'est pas bon")
+  if (value.length <= 2) {
     USER_INPUT.firstname.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'Le prénom doit comporter au moins 2 caractères !')
-  } 
-  else{
-    console.log("prénom c'est bon")
+  }
+  else {
     USER_INPUT.firstname.validate = true
     formData.setAttribute('data-error-visible', false)
   }
@@ -118,14 +114,12 @@ const lastInput = (event) => {
   const formData = last.parentElement
   USER_INPUT.lastname.value = value
 
-  if(value.length <= 2){
-    console.log("nom c'est pas bon")
+  if (value.length <= 2) {
     USER_INPUT.lastname.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'Le nom doit comporter au moins 2 caractères !')
-  } 
-  else{
-    console.log("nom c'est bon")
+  }
+  else {
     USER_INPUT.lastname.validate = true
     formData.setAttribute('data-error-visible', false)
   }
@@ -137,13 +131,11 @@ const emailInput = (event) => {
   USER_INPUT.email.value = value
   const emailRegex = new RegExp("^[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,3}$", 'g') // regex maison pour les email
 
-  if (emailRegex.test(value)){
-    console.log("email c'est bon")
+  if (emailRegex.test(value)) {
     USER_INPUT.email.validate = true
     formData.setAttribute('data-error-visible', false)
-  } 
+  }
   else {
-    console.log("email c'est pas bon")
     USER_INPUT.email.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'L\'email  est invalide !')
@@ -156,13 +148,11 @@ const birthdateInput = (event) => {
   const formData = birthdate.parentElement
   USER_INPUT.birthdate.value = value
 
-  if(numberRegex.test(value)){
-    console.log("birthdate c'est bon")
+  if (numberRegex.test(value)) {
     USER_INPUT.birthdate.validate = true
     formData.setAttribute('data-error-visible', false)
-  } 
-  else{
-    console.log("birthdate c'est pas bon")
+  }
+  else {
     USER_INPUT.birthdate.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'La date correspond pas !')
@@ -176,11 +166,9 @@ const quantityInput = (event) => {
   USER_INPUT.tournament.value = value
 
   if (numberRegex.test(value)) {
-    console.log("quantity c'est bon")
     USER_INPUT.tournament.validate = true
     formData.setAttribute('data-error-visible', false)
   } else {
-    console.log("quantity c'est pas bon");
     USER_INPUT.tournament.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'La quantité ne correspond pas !')
@@ -189,11 +177,10 @@ const quantityInput = (event) => {
 
 const cityHandler = (event) => {
   const isChecked = event.target.value
-  if (isChecked){
-    console.log("city c'est bon")
+  console.log(isChecked);
+  if (isChecked) {
     USER_INPUT.city.validate = true
   } else {
-    console.log("city c'est pas bon")
     USER_INPUT.city.validate = false
   }
 }
@@ -202,12 +189,10 @@ const cguHandler = (event) => {
   const isChecked = event.target.checked  // (true/false)
   const formData = cgu.parentElement
 
-  if (isChecked){
-    console.log("cgu c'est bon")
+  if (isChecked) {
     USER_INPUT.cgu.validate = true
     formData.setAttribute('data-error-visible', false)
   } else {
-    console.log("cgu c'est pas bon")
     USER_INPUT.cgu.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'Le cgu ne correspond pas !')
@@ -217,11 +202,9 @@ const cguHandler = (event) => {
 const newsletterHandler = (event) => {
   const isChecked = event.target.checked  // (true/false)
 
-  if (isChecked){
-    console.log("newsletter c'est bon")
+  if (isChecked) {
     USER_INPUT.newsletter.validate = true
   } else {
-    console.log("newsletter c'est pas bon")
     USER_INPUT.newsletter.validate = false
   }
 }
@@ -231,32 +214,23 @@ const validate = (event) => {
   event.preventDefault()
   console.log('user responses:', USER_INPUT);
 
-
+  let isValid = true;
 
   for (const input in USER_INPUT) {
-    // input = "firstname", "lastname", "email"....
-
-    // USER_INPUT.firstname
-    // USER_INPUT['firstname']
-
-    if (USER_INPUT[input].validate == false) {
-      alert('c\'est pas bon')
-      break
-    } 
-    else {
-      console.log('ok !!');
-      // 1 - tu caches le formulaire
-      // 2 - affiche la modal d'inscription
-
-      //const launchModalSubmit = () => {
-      modalbg.classList.remove("appear");
-      modalbgContentThanks.classList.add("appear");
-      //}
+    if (USER_INPUT[input].validate === false) {
+      if (input !== 'newsletter') {
+        isValid = false
+      }
     }
   }
-  
-}
 
+  if (isValid) {
+    modalbg.classList.remove("appear");
+    modalbgContentThanks.classList.add("appear");
+  } else {
+    console.warn('Attention: le formulaire a mal été rempli');
+  }
+}
 
 /////////////////////////////////////
 
@@ -276,9 +250,7 @@ modalBtnSubmitThanks.forEach((btn) => btn.addEventListener("click", launchModalS
 // close modal event
 crossThanks.addEventListener("click", closeModalThanks);
 
-
 /// thanks ///
-
 
 
 
@@ -291,7 +263,7 @@ last.addEventListener("input", lastInput);
 email.addEventListener("input", emailInput);
 birthdate.addEventListener("input", birthdateInput);
 quantity.addEventListener("input", quantityInput);
-cities.forEach(city => {city.addEventListener('click', cityHandler)});
+cities.forEach(city => { city.addEventListener('click', cityHandler) });
 
 cgu.addEventListener("click", cguHandler);
 newsletter.addEventListener("click", newsletterHandler);
