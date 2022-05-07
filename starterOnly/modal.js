@@ -229,6 +229,24 @@ const validate = (event) => {
     modalbgContentThanks.classList.add("appear");
   } else {
     console.warn('Attention: le formulaire a mal été rempli');
+    const formDataF = first.parentElement
+    formDataF.setAttribute('data-error-visible', true)
+    formDataF.setAttribute('data-error', 'Le prénom doit comporter au moins 2 caractères !')
+    const formDataL = last.parentElement
+    formDataL.setAttribute('data-error-visible', true)
+    formDataL.setAttribute('data-error', 'Le nom doit comporter au moins 2 caractères !')
+    const formDataE = email.parentElement
+    formDataE.setAttribute('data-error-visible', true)
+    formDataE.setAttribute('data-error', 'L\'email  est invalide !')
+    const formDataB = birthdate.parentElement
+    formDataB.setAttribute('data-error-visible', true)
+    formDataB.setAttribute('data-error', 'La date correspond pas !')
+    const formDataQ = quantity.parentElement
+    formDataQ.setAttribute('data-error-visible', true)
+    formDataQ.setAttribute('data-error', 'La quantité ne correspond pas !')
+    const formDataC = cgu.parentElement
+    formDataC.setAttribute('data-error-visible', true)
+    formDataC.setAttribute('data-error', 'Le cgu ne correspond pas !')
   }
 }
 
