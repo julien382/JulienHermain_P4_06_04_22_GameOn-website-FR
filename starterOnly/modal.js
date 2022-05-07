@@ -177,11 +177,15 @@ const quantityInput = (event) => {
 
 const cityHandler = (event) => {
   const isChecked = event.target.value
+  const formData = quantity.parentElement
   console.log(isChecked);
   if (isChecked) {
     USER_INPUT.city.validate = true
+    formData.setAttribute('data-error-visible', false)
   } else {
     USER_INPUT.city.validate = false
+    formData.setAttribute('data-error-visible', true)
+    formData.setAttribute('data-error', 'Il faut cocher une ville !')
   }
 }
 
