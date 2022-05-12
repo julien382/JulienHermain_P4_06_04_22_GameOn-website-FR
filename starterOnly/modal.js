@@ -98,7 +98,7 @@ const handlerFirstInput = (event) => {
   const formData = first.parentElement
   USER_INPUT.firstname.value = value
 
-  if (value.length <= 2) {
+  if (value.length <= 1) {
     USER_INPUT.firstname.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'Le prénom doit comporter au moins 2 caractères !')
@@ -114,7 +114,7 @@ const lastInput = (event) => {
   const formData = last.parentElement
   USER_INPUT.lastname.value = value
 
-  if (value.length <= 2) {
+  if (value.length <= 1) {
     USER_INPUT.lastname.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'Le nom doit comporter au moins 2 caractères !')
