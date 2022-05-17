@@ -182,9 +182,9 @@ main {
   /*background-color: rgba(26, 39, 156, 0.4);*/
 }
 @media screen and (min-width: 500px) {
-  .bground {
+  /*.bground {
     background-color: white;
-  }
+  }*/
   .content {
     margin: 5% auto;
   }
@@ -207,7 +207,7 @@ main {
 
 @media screen and (min-width: 501px) {
   .content {
-    margin-top: 40px ;
+    margin-top: 20px ;
   }
 }
 
