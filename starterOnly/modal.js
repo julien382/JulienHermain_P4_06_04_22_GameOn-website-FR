@@ -129,16 +129,18 @@ const emailInput = (event) => {
   const value = event.target.value
   const formData = email.parentElement
   USER_INPUT.email.value = value
-  const emailRegex = new RegExp("^[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,3}$", 'g') // regex maison pour les email
+  const emailRegex = /^[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,3}$/ // regex maison pour les email
 
   if (emailRegex.test(value)) {
     USER_INPUT.email.validate = true
     formData.setAttribute('data-error-visible', false)
+    console.log("ok")
   }
   else {
     USER_INPUT.email.validate = false
     formData.setAttribute('data-error-visible', true)
     formData.setAttribute('data-error', 'L\'email  est invalide !')
+    console.log("ko")
   }
 }
 
@@ -231,6 +233,8 @@ const validate = (event) => {
   if (isValid) {
     modalbg.classList.remove("appear");
     modalbgContentThanks.classList.add("appear");
+    const form = document.querySelector("form");
+    form.reset();
   } else {
     console.warn('Attention: le formulaire a mal été rempli');
     const formDataV = cgu.parentElement
