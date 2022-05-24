@@ -268,6 +268,8 @@ const validate = (event) => {
     const form = document.querySelector("form");
     form.reset()
     USER_INPUT = USER_INPUTOriginal;
+    const formDataVali = cgu.parentElement
+    formDataVali.setAttribute('data-error-visible', false)
   } else {
     console.warn('Attention: le formulaire a mal été rempli');
     const formDataV = cgu.parentElement
