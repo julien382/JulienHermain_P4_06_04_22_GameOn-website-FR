@@ -239,7 +239,7 @@ const validate = (event) => {
     console.warn('Attention: le formulaire a mal été rempli');
     const formDataV = cgu.parentElement
     formDataV.setAttribute('data-error-visible', true)
-    formDataV.setAttribute('data-error', "Le formulaire n'est pas validate !")
+    formDataV.setAttribute('data-error', "Le formulaire n'est pas valide !")
   }
 }
 
