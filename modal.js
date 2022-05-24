@@ -43,6 +43,39 @@ let USER_INPUT = {
   },
 }
 
+let USER_INPUTOriginal = {
+  firstname: {
+    value: null,
+    validate: false
+  },
+  lastname: {
+    value: null,
+    validate: false
+  },
+  email: {
+    value: null,
+    validate: false
+  },
+  birthdate: {
+    value: null,
+    validate: false
+  },
+  tournament: {
+    value: null,
+    validate: false
+  },
+  city: {
+    value: null,
+    validate: false
+  },
+  cgu: {
+    validate: true
+  },
+  newsletter: {
+    validate: false
+  },
+}
+
 // DOM Elements
 /// je m'inscris ///
 const modalbg = document.querySelector(".bground");
@@ -234,6 +267,7 @@ const validate = (event) => {
     modalbgContentThanks.classList.add("appear");
     const form = document.querySelector("form");
     form.reset()
+    USER_INPUT = USER_INPUTOriginal;
   } else {
     console.warn('Attention: le formulaire a mal été rempli');
     const formDataV = cgu.parentElement
