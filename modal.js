@@ -180,7 +180,6 @@ const quantityInput = (event) => {
 const cityHandler = (event) => {
   const isChecked = event.target.value
   const formData = quantity.parentElement
-  console.log(isChecked);
   if (isChecked) {
     USER_INPUT.city.validate = true
     formData.setAttribute('data-error-visible', false)
