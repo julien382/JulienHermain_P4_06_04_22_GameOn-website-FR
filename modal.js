@@ -233,7 +233,7 @@ const validate = (event) => {
     modalbg.classList.remove("appear");
     modalbgContentThanks.classList.add("appear");
     const form = document.querySelector("form");
-    form.reset();
+    form.reset()
   } else {
     console.warn('Attention: le formulaire a mal été rempli');
     const formDataV = cgu.parentElement
